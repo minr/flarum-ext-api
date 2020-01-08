@@ -1,0 +1,142 @@
+# Created by .ignore support plugin (hsz.mobi)
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
+.idea/**/mongoSettings.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
+.idea/.gitignore
+.idea/composerJson.xml
+.idea/encodings.xml
+.idea/flarum-ext-api.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+composer.lock
+Would skip repository vendor/fig/http-message-util
+Would skip repository vendor/guzzlehttp/psr7
+Would skip repository vendor/laminas/laminas-zendframework-bridge
+vendor/laminas/laminas-diactoros
+Would skip repository vendor/opis/closure
+Would skip repository vendor/psr/http-server-handler
+Would skip repository vendor/psr/http-server-middleware
+Would skip repository vendor/psr/http-message
+Would skip repository vendor/psr/container
+Would skip repository vendor/psr/log
+Would skip repository vendor/psr/simple-cache
+vendor/psr/http-factory
+Would skip repository vendor/symfony/translation
+Would skip repository vendor/symfony/event-dispatcher
+Would skip repository vendor/symfony/process
+Would skip repository vendor/symfony/debug
+Would skip repository vendor/symfony/polyfill-mbstring
+vendor/symfony/polyfill-iconv
+vendor/symfony/polyfill-php73
+vendor/symfony/polyfill-ctype
+vendor/symfony/polyfill-php72
+vendor/symfony/config
+vendor/symfony/filesystem
+vendor/symfony/polyfill-intl-idn
+vendor/symfony/css-selector
+vendor/symfony/event-dispatcher-contracts
+vendor/symfony/finder
+vendor/symfony/yaml
+vendor/symfony/mime
+vendor/symfony/service-contracts
+vendor/symfony/http-foundation
+vendor/symfony/console
+vendor/kylekatarnls
+vendor/autoload.php
+vendor/ralouphie
+vendor/intervention
+vendor/s9e
+vendor/mtdowling
+vendor/egulias
+vendor/nikic
+vendor/erusev
+vendor/filp
+vendor/bin
+vendor/oyejorge
+vendor/tobscure
+vendor/zendframework
+vendor/composer
+vendor/middlewares
+vendor/league
+vendor/swiftmailer
+vendor/nesbot
+vendor/components
+vendor/doctrine
+vendor/flarum
+vendor/dflydev
+vendor/monolog
+vendor/axy
+vendor/tijsverkoyen
+vendor/matthiasmullie
+vendor/franzl
+vendor/illuminate
