@@ -1,18 +1,60 @@
 <?php
 namespace Minr\Auth\Qizue;
 
-use Flarum\Api\Controller\AbstractShowController;
+use Flarum\User\Event\AvatarSaving;
+use Flarum\User\User;
+use Flarum\User\UserRepository;
+use Illuminate\Contracts\Bus\Dispatcher as BusDispatcher;
+use Illuminate\Contracts\Events\Dispatcher as EventDispatcher;
+use Illuminate\Support\Arr;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Tobscure\JsonApi\Document;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class SaveAvatar extends AbstractShowController {
+class SaveAvatar implements RequestHandlerInterface {
+    /**
+     * @var UserRepository
+     */
+    private $users;
+    /**
+     * @var BusDispatcher
+     */
+    private $bus;
+    /**
+     * @var EventDispatcher
+     */
+    private $events;
 
     /**
-     * @param ServerRequestInterface $request
-     * @param Document               $document
-     * @return mixed|void
+     * @param UserRepository $users
+     * @param BusDispatcher $bus
+     * @param EventDispatcher $events
      */
-    protected function data(ServerRequestInterface $request, Document $document) {
+    public function __construct(UserRepository $users, BusDispatcher $bus, EventDispatcher $events) {
+        $this->users = $users;
+        $this->bus = $bus;
+        $this->events = $events;
+    }
 
+
+    /**
+     * @inheritDoc
+     */
+    public function handle(ServerRequestInterface $request): ResponseInterface {
+        /**
+         * @var $actor User
+         */
+        $actor      = $request->getAttribute('actor');
+        $image      = Arr::get($request->getQueryParams(), 'image', '');
+
+        if($image === ''){
+            return new JsonResponse([]);
+        }
+
+        $user = $this->users->findOrFail($actor->userId);
+        new AvatarSaving($user, $actor, $image);
+        return new JsonResponse([
+            "image" => $image,
+        ]);
     }
 }
