@@ -3,7 +3,11 @@ namespace Minr\Auth\Qizue\Command;
 
 use Flarum\User\User;
 
-
+/**
+ * Class CreateQiniu
+ *
+ * @package Minr\Auth\Qizue\Command
+ */
 class CreateQiniu {
     /**
      * The user performing the action.
@@ -15,16 +19,16 @@ class CreateQiniu {
     /**
      * The attributes of the new link.
      *
-     * @var array
+     * @var string
      */
-    public $data;
+    public $type;
 
     /**
-     * @param User  $actor The user performing the action.
-     * @param array $data  The attributes of the new link.
+     * @param User   $actor The user performing the action.
+     * @param string $type
      */
-    public function __construct(User $actor, array $data) {
-        $this->actor = $actor;
-        $this->data = $data;
+    public function __construct(User $actor, string $type) {
+        $this->actor    = $actor;
+        $this->type     = $type;
     }
 }

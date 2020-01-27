@@ -4,6 +4,7 @@ namespace Minr\Auth\Qizue\Api\Controller;
 use Flarum\Api\Controller\AbstractCreateController;
 use Flarum\Api\Serializer\CurrentUserSerializer;
 use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Support\Arr;
 use Minr\Auth\Qizue\Command\CreateQiniu;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
@@ -33,7 +34,7 @@ class CreateQiniuController extends AbstractCreateController {
         return $this->bus->dispatch(
             new CreateQiniu(
                 $request->getAttribute('actor'),
-                array_get($request->getQueryParams(), 'type', 'discuss')
+                Arr::get($request->getQueryParams(), 'type', 'discuss')
             )
         );
     }
