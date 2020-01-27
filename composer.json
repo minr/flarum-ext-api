@@ -4,7 +4,7 @@
     "type": "flarum-extension",
     "keywords": ["api"],
     "license": "MIT",
-    "version": "v0.1.0",
+    "version": "v0.1.1",
     "authors": [
         {
             "name": "MIN",

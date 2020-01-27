@@ -1,11 +1,10 @@
 <?php
 use Flarum\Extend;
-use \Minr\Auth\Qizue\Qiniu;
-use \Minr\Auth\Qizue\SaveAvatar;
-
+use Minr\Auth\Qizue\Api\Controller\SaveAvatrController;
+use Minr\Auth\Qizue\Command\CreateQiniu;
 
 return [
-    (new Extend\Routes('forum'))
-        ->get('/api/token/qiniu', 'api.token.qiniu', Qiniu::class)
-        ->post('/api/users/{id}/save_avatar', 'api.users.avatar.save', SaveAvatar::class)
+    (new Extend\Routes('api'))
+        ->get('/token/qiniu', 'token.qiniu', CreateQiniu::class)
+        ->post('/users/{id}/save_avatar', 'users.avatar.save', SaveAvatrController::class)
 ];
