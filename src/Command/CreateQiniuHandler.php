@@ -15,7 +15,7 @@ class CreateQiniuHandler {
      */
     public function handle(CreateQiniu $command){
         $actor  = $command->actor;
-        $data   = $command->data;
+        $data   = $command->type;
 
         $this->assertRegistered($actor);
         $qiniu  = Qiniu::build(

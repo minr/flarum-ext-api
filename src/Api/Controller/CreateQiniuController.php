@@ -2,9 +2,9 @@
 namespace Minr\Auth\Qizue\Api\Controller;
 
 use Flarum\Api\Controller\AbstractCreateController;
-use Flarum\Api\Serializer\CurrentUserSerializer;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
+use Minr\Auth\Qizue\Api\Serializer\QiniuSerializer;
 use Minr\Auth\Qizue\Command\CreateQiniu;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
@@ -13,7 +13,7 @@ class CreateQiniuController extends AbstractCreateController {
     /**
      * {@inheritdoc}
      */
-    public $serializer = CurrentUserSerializer::class;
+    public $serializer = QiniuSerializer::class;
 
     /**
      * @var Dispatcher
