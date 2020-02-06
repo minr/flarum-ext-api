@@ -3,25 +3,21 @@ namespace Minr\Auth\Qizue\Api\Serializer;
 
 use Flarum\Api\Serializer\AbstractSerializer;
 
-class QiniuSerializer extends AbstractSerializer{
-
+class UpgradeSerializer extends AbstractSerializer{
     /**
      * {@inheritdoc}
      */
-    protected $type = 'qiniu';
-
-    /**
-     * @var string
-     */
-    protected $id   = "-";
+    protected $type = 'upgrade';
 
     /**
      * @inheritDoc
      */
     protected function getDefaultAttributes($model) {
         $attributes = [
-            'token'         => $model->token,
-            'key'           => $model->key,
+            'content'       => $model->content,
+            'version'       => $model->version,
+            'downLink'      => $model->downLink,
+            'needUpgrade'   => $model->needUpgrade,
         ];
 
         return $attributes;
