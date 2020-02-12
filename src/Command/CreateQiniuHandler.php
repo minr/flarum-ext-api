@@ -2,6 +2,7 @@
 namespace Minr\Auth\Qizue\Command;
 
 use Flarum\User\AssertPermissionTrait;
+use Flarum\User\Exception\NotAuthenticatedException;
 use Flarum\User\User;
 use Minr\Auth\Qizue\Qiniu;
 
@@ -16,7 +17,7 @@ class CreateQiniuHandler {
     /**
      * @param CreateQiniu $command
      * @return Qiniu
-     * @throws \Flarum\User\Exception\NotAuthenticatedException
+     * @throws NotAuthenticatedException
      */
     public function handle(CreateQiniu $command){
         $actor  = $command->actor;
