@@ -7,7 +7,7 @@ use Flarum\User\User;
 use Flarum\User\UserRepository;
 use Illuminate\Validation\ValidationException;
 use Minr\Auth\Qizue\Avatar;
-use Minr\Auth\Qizue\AvatarValidator;
+use Minr\Auth\Qizue\Validator\AvatarValidator;
 
 class SaveAvatarHandler {
     use AssertPermissionTrait;

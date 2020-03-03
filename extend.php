@@ -4,7 +4,7 @@ use Minr\Auth\Qizue\Api\Controller\CreateQiniuController;
 use Minr\Auth\Qizue\Api\Controller\FeedbackController;
 use Minr\Auth\Qizue\Api\Controller\SaveAvatarController;
 use Minr\Auth\Qizue\Api\Controller\UpgradeController;
-use Minr\Auth\Qizue\Api\Controller\UsersNameController;
+use Minr\Auth\Qizue\Api\Controller\PutUserNameController;
 
 return [
     //new Extend\Locales(__DIR__.'/locale'),
@@ -23,5 +23,5 @@ return [
         // 修改头像
         ->post('/users/{id}/save_avatar', 'users.avatar.save', SaveAvatarController::class)
         // 修改用户名
-        ->put('/users/{id}/name', 'users.change.name', UsersNameController::class)
+        ->put('/users/{id}/name', 'users.put.name', PutUserNameController::class)
 ];

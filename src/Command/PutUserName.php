@@ -3,7 +3,7 @@ namespace Minr\Auth\Qizue\Command;
 
 use Flarum\User\User;
 
-class PutName {
+class PutUserName {
 
     /**
      * @var string

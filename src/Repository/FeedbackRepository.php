@@ -1,8 +1,7 @@
 <?php
-namespace Minr\Auth\Qizue;
+namespace Minr\Auth\Qizue\Repository;
 
 class FeedbackRepository {
-
     /**
      * @param int $id
      * @return mixed
@@ -10,5 +9,4 @@ class FeedbackRepository {
     public function findOrFail(int $id) {
         return Feedback::where('id', $id)->firstOrFail();
     }
-
 }

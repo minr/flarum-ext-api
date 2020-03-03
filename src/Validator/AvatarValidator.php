@@ -1,5 +1,5 @@
 <?php
-namespace Minr\Auth\Qizue;
+namespace Minr\Auth\Qizue\Validator;
 
 use Flarum\Foundation\AbstractValidator;
 

@@ -4,11 +4,11 @@ use Flarum\Api\Controller\AbstractCreateController;
 use Flarum\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use Minr\Auth\Qizue\Api\Serializer\UsersNameSerializer;
-use Minr\Auth\Qizue\Command\PutName;
+use Minr\Auth\Qizue\Command\PutUserName;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 
-class UsersNameController extends AbstractCreateController{
+class PutUserNameController extends AbstractCreateController{
     /**
      * {@inheritdoc}
      */
@@ -32,10 +32,10 @@ class UsersNameController extends AbstractCreateController{
     protected function data(ServerRequestInterface $request, Document $document) {
         $id     = Arr::get($request->getQueryParams(), 'id');
         $actor  = $request->getAttribute('actor');
-        $avatar = Arr::get($request->getParsedBody(), 'avatar', '');
+        $name   = Arr::get($request->getParsedBody(), 'name', '');
 
         return $this->bus->dispatch(
-            new PutName($actor, $id, $avatar)
+            new PutUserName($actor, $id, $name)
         );
     }
 }

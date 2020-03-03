@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @package Minr\Auth\Qizue
  */
-class Name extends AbstractModel{
+class UsernameRequest extends AbstractModel{
     use ScopeVisibilityTrait;
 
     protected $table = 'username_requests';

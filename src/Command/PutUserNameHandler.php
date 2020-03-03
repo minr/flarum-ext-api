@@ -7,10 +7,10 @@ use Flarum\User\User;
 use Flarum\User\UserRepository;
 use Flarum\User\UserValidator;
 use Illuminate\Validation\ValidationException;
-use Minr\Auth\Qizue\Name;
+use Minr\Auth\Qizue\UsernameRequest;
 use Minr\Auth\Qizue\Validator\NameValidator;
 
-class PutNameHandler {
+class PutUserNameHandler {
 
     use AssertPermissionTrait;
 
@@ -37,12 +37,12 @@ class PutNameHandler {
     }
 
     /**
-     * @param PutName $command
-     * @return Name
+     * @param PutUserName $command
+     * @return PutUserName
      * @throws PermissionDeniedException
      * @throws ValidationException
      */
-    public function handle(PutName $command) {
+    public function handle(PutUserName $command) {
         $actor  = $command->actor;
         $uid    = $command->uid;
         $name   = $command->name;
@@ -56,9 +56,9 @@ class PutNameHandler {
             'name' => $name
         ]);
 
-        Name::unguard();
+        UsernameRequest::unguard();
 
-        $usernameRequest = Name::firstOrNew([
+        $usernameRequest = UsernameRequest::firstOrNew([
             'user_id' => $actor->id,
         ]);
 
